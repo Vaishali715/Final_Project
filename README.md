@@ -9,6 +9,17 @@ We will use the Mushroom Data Set from the UCI Machine Learning Repository. This
 ## Data Exploration, Machine Learning and Visualization
 Before employing the model, we would like to do some data exploration to ask questions such as whether there is imbalance in the target variable in the model or if there is any correlation between the features. We can visualize data with bar charts, scatterplots, and heatmaps to understand relationships between different variables in the dataset. We hope to correctly classify the dataset with the help of a number of different machine learning methods such as Logistic Regression, Support Vector Machines, Neural Networks etc. Where interpretability is possible we plan to measure feature importance to help understand which features are playing the most important role in helping determining whether a mushroom is safe or poisonous. Ideally we can afford to classify some safe mushrooms as poisonous but we have to make sure we do not classify poisonous mushrooms as safe, as poisonous mushrooms can be very dangerous for consumers. Therefore, through the help of data exploration, data visualization and machine learning, we hope to uncover interesting trends, patterns and optimize our classification of mushrooms. 
 
+## Technologies Used
+
+### Data Cleaning and Analysis 
+Pandas (python) will be used to clean the data and perform exploratory analysis. 
+
+### Database Storage and Connection
+We will upload our csv data file into a postgres SQL database. We will create the schema for this file. We will create a database connection using sqlalchemy (python) in order to import the data from a postgres SQL database to a Jupyter Notebook for analysis.  
+
+### Machine Learning 
+sklearn (python) is a machine learning library we will use in order to split the data and preprocess the data. We will use the tensorflow (python) library for deep learning capabilities, to create and run our deep neurel network model. 
+
 ## Communication Protocols
 
 Team members will communicate through Slack and Zoom meetings:
