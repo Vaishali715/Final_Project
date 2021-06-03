@@ -24,6 +24,9 @@ We will upload our csv data file into a PostgreSQL database. We will create the 
 ### Machine Learning 
 Scikit-learn (Python) is a machine learning library we will use in order to split the data and preprocess the data. We will use the TensorFlow (Python) library for deep learning capabilities, and to create and run our deep neural network model. 
 
+### Presentation
+For our presentation of our analysis we will be using Google Sheets found [here.](https://docs.google.com/presentation/d/1EP28CKPbYbpHLa78xovteIuUX3ddW1zJACCxqsLnej8/edit#slide=id.p)
+
 ## Communication Protocols
 
 Team members will communicate through Slack and Zoom meetings:
@@ -45,3 +48,5 @@ As per the protocols, the team members followed the following:
   https://www.kaggle.com/uciml/mushroom-classification/code
   
   https://archive.ics.uci.edu/ml/datasets/Mushroom
+  
+  [Presentation](https://docs.google.com/presentation/d/1EP28CKPbYbpHLa78xovteIuUX3ddW1zJACCxqsLnej8/edit#slide=id.p)
