@@ -27,6 +27,47 @@ Scikit-learn (Python) is a machine learning library we will use in order to spli
 ### Presentation
 For our presentation of our analysis we will be using Google Sheets found [here.](https://docs.google.com/presentation/d/1EP28CKPbYbpHLa78xovteIuUX3ddW1zJACCxqsLnej8/edit#slide=id.p)
 
+### Preliminary Data Preprocessing
+
+Data preprocessing is a data mining technique that involves transforming raw data into an understandable format (Wikipedia definition)
+The following steps were carried out under Data Preprocessing:
+* Examining the data for null values, missing values, checking datatypes and setting it as required
+* New column 'mushroom_id' is created to give unique identification to each row
+* Rows are checked for null values and dropped
+* Checking for the unique values of each feature and plotting them which helps in visualizing the features
+* Column 'veil_type' shows no variations, hence dropped
+* In column 'stalk_root', out of 8124 rows, 2480 rows have missing values and hence dropped
+* The data was denoted by just a character, so it was changed to meaningful understandable words
+
+### Preliminary Feature Engineering 
+Feature engineering is the process of transforming raw data into features that better represent the underlying problem to the predictive models, resulting in improved model accuracy on unseen data (as on https://medium.com/mindorks/what-is-feature-engineering-for-machine-learning-d8ba3158d97a)
+
+* After dropping the mushroom_id column we are encoding all categorical columns to dummy variables (features). Here we are getting 113 columns out of 21 columns 
+
+### Preliminary Feature Selection, including their decision-making process 
+
+* All the columns except mushroom_id, class_edible and class_poisonous, are selected as features responsible for the target
+* The visualizations of each feature and its unique values helped in deciding for which feature to be selected
+* Depending on the encoded values of feature and the applied model, we will get the results
+ 
+### Description of how data was split into training and testing sets 
+* First the original dataset was split into input(X) and output(y) columns
+* Next, the train_test_split function was called, passing both I/O arrays and have them split appropriately into train and test subsets
+* Here we have used stratified train-test split which ensures same proportions of examples in each class. This is achieved by setting the 'stratify' argument to the y component of the original dataset
+
+### Explanation of model choice, including limitations and benefits
+* For Mushroom classification we have tried four models:
+  * Logistic Regression
+  * SVM(Support Vector Machine)
+  * Deep Neural Network
+  * Random Forest Classifier 
+
+* Out of these four models we will be using Logistic Regression for the stated benefits
+  * As our dataset is moderate, this model is easier to implement, interpret, and very efficient to train. Since Logistic Regression comes with a fast, resource friendly algorithm it scales efficiently
+* Limitation
+  * Logistic Regression is still prone to overfitting, although less likely than some other models. To avoid overfitting, a larger training data and regularization can be introduced
+  * Logistic Regression cannot handle missing data, this means extra work has to be done on data regarding processing missing values as we removed the 'stalk_root' column because one fourth of the column values were missing
+
 ## Communication Protocols
 
 Team members will communicate through Slack and Zoom meetings:
@@ -48,5 +89,6 @@ As per the protocols, the team members followed the following:
   https://www.kaggle.com/uciml/mushroom-classification/code
   
   https://archive.ics.uci.edu/ml/datasets/Mushroom
+
   
   [Presentation](https://docs.google.com/presentation/d/1EP28CKPbYbpHLa78xovteIuUX3ddW1zJACCxqsLnej8/edit#slide=id.p)
