@@ -24,6 +24,9 @@ We will upload our csv data file into a PostgreSQL database. We will create the 
 ### Machine Learning 
 Scikit-learn (Python) is a machine learning library we will use in order to split the data and preprocess the data. We will use the TensorFlow (Python) library for deep learning capabilities, and to create and run our deep neural network model. 
 
+### Data Visualization 
+Seaborn and Matplotlib are Python data visualization packages we will use in Jupyter Notebook in order to create some initial plots in order to better understand the data. We will also use pandas package to group different variables and use functions such as value count, sum, mean etc. in order to create different subgroups which can then be visualized. After better understanding these patterns we will export our data over to Tableau, a data visualization software that helps allows us to do data storytelling in a more interactive in aesthetically pleasing way. We will export our data to Tableau where we will create a Tableau Story and present the process of Mushroom Classification through visuals. 
+
 ### Presentation
 For our presentation of our analysis we will be using Google Sheets found [here.](https://docs.google.com/presentation/d/1EP28CKPbYbpHLa78xovteIuUX3ddW1zJACCxqsLnej8/edit#slide=id.p)
 
@@ -67,6 +70,16 @@ Feature engineering is the process of transforming raw data into features that b
 * Limitation
   * Logistic Regression is still prone to overfitting, although less likely than some other models. To avoid overfitting, a larger training data and regularization can be introduced
   * Logistic Regression cannot handle missing data, this means extra work has to be done on data regarding processing missing values as we removed the 'stalk_root' column because one fourth of the column values were missing
+
+### Data Visualization Process
+We will use data visualization to show the relationship between all the 23 variables we have in our dataset, with the primary goal of showing the relationship between our features and our outcome (class). Since we have largely unordered categorical variables, our analysis is limited to heatmaps, bar plots and mosaic plots. 
+
+* We first create a bar chart for the class (outcome) variable to understand the categorical distribution and ensure there is no imbalance between the two classes. We find that our outcome categories are roughly equal in count, we do not need to use resampling methods. 
+* We find that the veil type feature has one category, since all mushrooms have the same category of veil type, this feature does not contribute to the model and should be dropped
+* We create a heatmap to visualize the relationships between all the variables in the model to ensure there is no multicollinearity between the features as well as to understand which features are most correlated to our outcome. We find that population, spore-print-color, ring type, stalk color above ring, gill color, gill size, gill spacing and bruises all have a correlation of greater than 0.3 with class.
+* We create barplots for the remaining 21 features and find many empty bins, which show that many categories are unnecessary because they do not have any observations. Some variables are even made up of largely one category with other categories have few or no observations. These visuals allow us to drop unnecessary categories (bins) as well as unnecessary feautres that are adding noise to our model
+* We will change our bins and drop some features and create some updated bar plots to show the results of the changes we have made
+* We will visualize our confusion matrix and create a horizontal bar plot for feature importances, showing how our model performed and which were our most important features, ultamitely proving how the data visualization process helped our feature selection and improved our model.
 
 ## Communication Protocols
 
