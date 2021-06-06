@@ -72,7 +72,7 @@ Feature engineering is the process of transforming raw data into features that b
   * Logistic Regression cannot handle missing data, this means extra work has to be done on data regarding processing missing values as we removed the 'stalk_root' column because one fourth of the column values were missing
 
 ### Data Visualization Process
-We will use data visualization to show the relationship between all the 23 variables we have in our dataset, with the primary goal of showing the relationship between our features and our outcome (class). Since we have largely unordered categorical variables our analysis is limited to heatmaps, bar plots and mosaic plots. 
+We will use data visualization to show the relationship between all the 23 variables we have in our dataset, with the primary goal of showing the relationship between our features and our outcome (class). Since we have largely unordered categorical variables, our analysis is limited to heatmaps, bar plots and mosaic plots. 
 
 * We first create a bar chart for the class (outcome) variable to understand the categorical distribution and ensure there is no imbalance between the two classes. We find that our outcome categories are roughly equal in count, we do not need to use resampling methods. 
 * We find that the veil type feature has one category, since all mushrooms have the same category of veil type, this feature does not contribute to the model and should be dropped
