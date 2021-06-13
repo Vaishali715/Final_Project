@@ -1,0 +1,53 @@
+raw_mushroom
+-
+mushroom_id PK FK - clean_mushroom.mushroom_id INT
+class VARCHAR
+cap_shape VARCHAR
+cap_surface VARCHAR
+cap_color VARCHAR
+bruises VARCHAR
+odor VARCHAR
+gill_attachment VARCHAR
+gill_spacing VARCHAR
+gill_size VARCHAR
+gill_color VARCHAR
+stalk_shape VARCHAR
+stalk_root VARCHAR
+stalk_surface_above_ring VARCHAR
+stalk_surface_below_ring VARCHAR
+stalk_color_above_ring VARCHAR
+stalk_color_below_ring VARCHAR
+veil_type VARCHAR
+veil_color VARCHAR
+ring_number VARCHAR
+ring_type VARCHAR
+spore_print_color VARCHAR
+population VARCHAR
+habitat VARCHAR
+
+clean_mushroom
+-
+mushroom_id PK FK INT
+class VARCHAR
+cap_shape VARCHAR
+cap_surface VARCHAR
+cap_color VARCHAR
+bruises VARCHAR
+odor VARCHAR
+gill_attachment VARCHAR
+gill_spacing VARCHAR
+gill_size VARCHAR
+gill_color VARCHAR
+stalk_shape VARCHAR
+stalk_root VARCHAR
+stalk_surface_above_ring VARCHAR
+stalk_surface_below_ring VARCHAR
+stalk_color_above_ring VARCHAR
+stalk_color_below_ring VARCHAR
+veil_type VARCHAR
+veil_color VARCHAR
+ring_number VARCHAR
+ring_type VARCHAR
+spore_print_color VARCHAR
+population VARCHAR
+habitat VARCHAR
