@@ -28,7 +28,7 @@ Scikit-learn (Python) is a machine learning library we will use in order to spli
 Seaborn and Matplotlib are Python data visualization packages we will use in Jupyter Notebook in order to create some initial plots in order to better understand the data. We will also use pandas package to group different variables and use functions such as value count, sum, mean etc. in order to create different subgroups which can then be visualized. After better understanding these patterns we will export our data over to Tableau, a data visualization software that helps allows us to do data storytelling in a more interactive in aesthetically pleasing way. We will export our data to Tableau where we will create a Tableau Story and present the process of Mushroom Classification through visuals. 
 
 ### Presentation
-For our presentation of our analysis we will be using Google Sheets found [here.](https://docs.google.com/presentation/d/1EP28CKPbYbpHLa78xovteIuUX3ddW1zJACCxqsLnej8/edit#slide=id.p)
+For our presentation of our analysis we will be using Google Slides found [here.](https://docs.google.com/presentation/d/1EP28CKPbYbpHLa78xovteIuUX3ddW1zJACCxqsLnej8/edit#slide=id.p)
 
 ### Preliminary Data Preprocessing
 
@@ -62,10 +62,10 @@ Feature engineering is the process of transforming raw data into features that b
 * For Mushroom classification we have tried four models:
   * Logistic Regression (Accuracy: 0.9995) 
   * SVM(Support Vector Machine) (Accuracy: 1.0) 
-  * Deep Neural Network (Accuracy: 0.9817) 
+  * Deep Neural Network (Accuracy: 0.9862) 
   * Random Forest Classifier (Accuracy: 1.0) 
 
-Initially we had decided to go with the Logistic Regression Model, but after evaluating other models, we decided to go with the Random Forest classifier. We decided to go with Random Forest because initially we tried the Neural Network Model and Logistic Regression. We realized that Neural Network might be overfitting the data by overanalyzing and creating unnecessary patterns, one of the reasons the model yields the least accurate score of of the three, Then we decided on the Logistic Regression model, and even though the model did a nearly perfect job of a 0.9995 accuracy, we realized that with a total of 20 features and 111 dummies, it may be better to use a more complex model that might yield an accuracy of 1. Therefore, we finally decided on the Random Forest Classifier that yields an accuracy of 1.
+Initially we had decided to go with the Logistic Regression Model, but after evaluating other models, we decided to go with the Random Forest classifier. We decided to go with Random Forest because initially we tried the Neural Network Model and Logistic Regression. We realized that Neural Network might be overfitting the data by overanalyzing and creating unnecessary patterns, one of the reasons the model yields the least accurate score of the four models, Then we decided on the Logistic Regression model, and even though the model did a nearly perfect job of a 0.9995 accuracy, we realized that with a total of 20 features and 111 dummies, it may be better to use a more complex model that might yield an accuracy of 1. Therefore, we finally decided on the Random Forest Classifier that yields an accuracy of 1.
 
 * Benefits 
   * Out of all the models Support Vector Machine and Random Forest yield a perfect accuracy score of 1 with all outcomes classified correctly. We prefer Random Forest over Support Vector Machine because considering the large amount of categorical features we have, Random Forest adds randomness to the model, while growing the trees. Random Forest searches for the best feature within a subset of features, which also reduces overfitting. After deleting unnecessary features, we still end up with 20 features, and since all these features are categorical variable they end becoming a total of 111 dummy variables. Therefore Random Forest has a lot of depth and therefore, can help us account for all the 111 dummies we have in our model. 
