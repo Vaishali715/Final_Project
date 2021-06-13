@@ -60,12 +60,14 @@ Feature engineering is the process of transforming raw data into features that b
 
 ### Explanation of model choice, including limitations and benefits
 * For Mushroom classification we have tried four models:
-  * Logistic Regression
-  * SVM(Support Vector Machine)
-  * Deep Neural Network
-  * Random Forest Classifier 
+  * Logistic Regression (Accuracy: 0.9995) 
+  * SVM(Support Vector Machine) (Accuracy: 1.0) 
+  * Deep Neural Network (Accuracy: 0.9817) 
+  * Random Forest Classifier (Accuracy: 1.0) 
 
-* Out of these four models we will be using Random Forest for the stated benefits
+Initially we had decided to go with the Logistic Regression Model, but after evaluating other models, we decided to go with the Random Forest classifier. We decided to go with Random Forest because initially we tried the Neural Network Model and Logistic Regression. We realized that Neural Network might be overfitting the data by overanalyzing and creating unnecessary patterns, one of the reasons the model yields the least accurate score of of the three, Then we decided on the Logistic Regression model, and even though the model did a nearly perfect job of a 0.9995 accuracy, we realized that with a total of 20 features and 111 dummies, it may be better to use a more complex model that might yield an accuracy of 1. Therefore, we finally decided on the Random Forest Classifier that yields an accuracy of 1.
+
+* Out of these four models we will be using Random Forest for the stated benefits:
   * Out of all the models Support Vector Machine and Random Forest yield a perfect accuracy score of 1 with all outcomes classified correctly. We prefer Random Forest over Support Vector Machine because considering the large amount of categorical features we have, Random Forest adds randomness to the model, while growing the trees. Random Forest searches for the best feature within a subset of features, which also reduces overfitting. After deleting unnecessary features, we still end up with 20 features, and since all these features are categorical variable they end becoming a total of 111 dummy variables. Therefore Random Forest has a lot of depth and therefore, can help us account for all the 111 dummies we have in our model. 
 * Limitation
   * Random Forest has a kind of a black box approach, therefore, we have very little control on what the model does and therefore the model is less customizeable, we can at best only change the parameters or random seeds. Therefore, it is a predictive modeling tool, not a descriptive tool. 
