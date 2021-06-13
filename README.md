@@ -27,20 +27,6 @@ Scikit-learn (Python) is a machine learning library we will use in order to spli
 ### Presentation
 For our presentation of our analysis we will be using Google Sheets found [here.](https://docs.google.com/presentation/d/1EP28CKPbYbpHLa78xovteIuUX3ddW1zJACCxqsLnej8/edit#slide=id.p)
 
-## Communication Protocols
-
-Team members will communicate through Slack and Zoom meetings:
-* On a daily basis, Slack will be used to convey any information and useful links for the project
-* Alternate day, Zoom meetings will be scheduled to discuss the status of project by each team member and clarify the doubts if any
-
-As per the protocols, the team members followed the following:
-* The first meeting was a Zoom session in which the team members were introduced to each other and then discussed about the requirements of the project.
-* The process of finalizing the project needs a lot of search and then shortlisting the topics and then arriving at a consensus for a topic. Every team member
-  played their part of searching the topics and conveyed the shortlisted links through Slack in a common group. The topics were crosschecked and then 'Mushrooms' 
-  topic was finalized.
-* As per the roles each team member worked and daily conveyed the information through Slack and discussed the status of the project as well as clarified each 
-  others' doubts over Zoom meetings whenever required.
-
 ## References 
 
   https://www.researchandmarkets.com/reports/4451952/global-edible-mushrooms-market-industry-trends
