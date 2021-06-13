@@ -65,11 +65,11 @@ Feature engineering is the process of transforming raw data into features that b
   * Deep Neural Network
   * Random Forest Classifier 
 
-* Out of these four models we will be using Logistic Regression for the stated benefits
-  * As our dataset is moderate, this model is easier to implement, interpret, and very efficient to train. Since Logistic Regression comes with a fast, resource friendly algorithm it scales efficiently
+* Out of these four models we will be using Random Forest for the stated benefits
+  * Out of all the models Support Vector Machine and Random Forest yield a perfect accuracy score of 1 with all outcomes classified correctly. We prefer Random Forest over Support Vector Machine because considering the large amount of categorical features we have, Random Forest adds randomness to the model, while growing the trees. Random Forest searches for the best feature within a subset of features, which also reduces overfitting. After deleting unnecessary features, we still end up with 20 features, and since all these features are categorical variable they end becoming a total of 111 dummy variables. Therefore Random Forest has a lot of depth and therefore, can help us account for all the 111 dummies we have in our model. 
 * Limitation
-  * Logistic Regression is still prone to overfitting, although less likely than some other models. To avoid overfitting, a larger training data and regularization can be introduced
-  * Logistic Regression cannot handle missing data, this means extra work has to be done on data regarding processing missing values as we removed the 'stalk_root' column because one fourth of the column values were missing
+  * Random Forest has a kind of a black box approach, therefore, we have very little control on what the model does and therefore the model is less customizeable, we can at best only change the parameters or random seeds. Therefore, it is a predictive modeling tool, not a descriptive tool. 
+  * Another problem with Random Forest is that a large number of trees can make the algorithm too slow and ineffective for real time predictions. Therefore, if we end up with too many trees our model may slow down and may not perform well. 
 
 ### Data Visualization Process
 We will use data visualization to show the relationship between all the 23 variables we have in our dataset, with the primary goal of showing the relationship between our features and our outcome (class). Since we have largely unordered categorical variables, our analysis is limited to heatmaps, bar plots and mosaic plots. 
