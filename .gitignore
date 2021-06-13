@@ -4,6 +4,9 @@ config.py
 #Adding .DS_Store
 .DS_Store
 
+# Adding technology.md
+technology.md
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
