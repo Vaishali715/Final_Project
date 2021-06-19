@@ -27,7 +27,7 @@ We will be using several different technologies for the completion of our analys
   * ### For Presentation
     * We will be using Google Slides, click [here.](https://docs.google.com/presentation/d/1EP28CKPbYbpHLa78xovteIuUX3ddW1zJACCxqsLnej8/edit#slide=id.p)
 
-## Data Exploration, Machine Learning and Visualization
+## Data Exploration and Machine Learning
 Before employing the model, we would like to do some data exploration to ask questions such as whether there is imbalance in the target variable in the model or if there is any correlation between the features. We can visualize data with bar charts, scatterplots, and heatmaps to understand relationships between different variables in the dataset. We hope to correctly classify the dataset with the help of a number of different machine learning methods such as Logistic Regression, Support Vector Machines, Neural Networks etc. Where interpretability is possible we plan to measure feature importance to help understand which features are playing the most important role in helping determining whether a mushroom is safe or poisonous. Ideally we can afford to classify some safe mushrooms as poisonous but we have to make sure we do not classify poisonous mushrooms as safe, as poisonous mushrooms can be very dangerous for consumers. Therefore, through the help of data exploration, data visualization and machine learning, we hope to uncover interesting trends, patterns and optimize our classification of mushrooms.
 
 ### Preliminary Data Preprocessing
@@ -76,7 +76,7 @@ Initially we selected and used Logistic Regression Model, but after evaluating o
 ### Description and explanation of model’s confusion matrix, including final accuracy score
 * Our Random Forest Classifier's Confusion Matrix explains that there were total of 4062 predictions and out of that 1958 were actually 'edible' and also predicted 'edible' while 2104 were 'poisonous' and also predicted as 'poisonous'. Thus, we got a final accuracy score of 1.
 
-### Data Visualization Process
+## Data Visualization Process
 We will use data visualization to show the relationship between all the 23 variables we have in our dataset, with the primary goal of showing the relationship between our features and our outcome (class). Since we have largely unordered categorical variables, our analysis is limited to heatmaps, bar plots and mosaic plots. 
 
 * We first create a bar chart for the class (outcome) variable to understand the categorical distribution and ensure there is no imbalance between the two classes. We find that our outcome categories are roughly equal in count, we do not need to use resampling methods. 
