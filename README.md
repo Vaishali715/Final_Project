@@ -74,7 +74,7 @@ Initially we selected and used Logistic Regression Model, but after evaluating o
   * Another problem with Random Forest is that a large number of trees can make the algorithm too slow and ineffective for real time predictions. Therefore, if we end up with too many trees our model may slow down and may not perform well. 
 
 ### Description and explanation of model’s confusion matrix, including final accuracy score
-* Our Random Forest Classifier's Confusion Matrix explains that there were total of 4062 predictions and out of that 1958 were actually 'edible' and also predicted 'edible' while 2104 were 'poisonous' and also predicted as 'poisonous'. Thus, we got a final accuracy score of 1.
+* The Random Forest Classifier's Confusion Matrix explains that there were total of 4062 predictions and out of that 1958 were actually 'edible' and also predicted 'edible' while 2104 were 'poisonous' and also predicted as 'poisonous'. Thus, we got a final accuracy score of 1.
 
 ## Data Visualization Process
 We will use data visualization to show the relationship between all the 23 variables we have in our dataset, with the primary goal of showing the relationship between our features and our outcome (class). Since we have largely unordered categorical variables, our analysis is limited to heatmaps, bar plots and mosaic plots. 
