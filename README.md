@@ -51,6 +51,17 @@ After plotting our outcome variable, we see that value counts of both edible and
 
 #### Bar Chart: Features 
 
+For all feature bar charts please refer to: 
+https://github.com/Vaishali715/Final_Project/tree/main/Images
+
+![This is a alt text.](/Images/Dropped_variable.png)
+![This is a alt text.](/Images/stalk_root.png)
+
+After analyzing the bar charts for all 22 features, we find anamolies in two of these features. In the veil type feature, we find that veil type count plot has only one category. If all mushroom samples, both poisonous and edible, have only one category of veil type, this feature will have no effect on. In the stalk root feature, we can see around 2500 counts of missing values, which may create an adverse effect on the outcome of model, therefore we dropped this category as well from our dataset. 
+
+### Heatmap 
+
+
 
 ### Data Preprocessing 
 Data preprocessing is a data mining technique that involves transforming raw data into an understandable format. 
@@ -59,25 +70,25 @@ The following steps were carried out under Data Preprocessing:
 * New column 'mushroom_id' is created to give unique identification to each row
 * Rows are checked for null values and dropped
 * Checking for the unique values of each feature and plotting them which helps in visualizing the features
-* Column 'veil_type' shows no variations, hence dropped
-* In column 'stalk_root', out of 8124 rows, 2480 rows have missing values and hence dropped
+* The data was denoted by just a character, so it was changed to meaningful understandable words
 
 ## Feature Engineering 
 Feature engineering is the process of transforming raw data into features that better represent the underlying problem to the predictive models, resulting in improved model accuracy on unseen data. 
-The following steps were carried out under Feature Engineering: 
-* The data was denoted by just a character, so it was changed to meaningful understandable words
-* After dropping the mushroom_id column we are encoding all categorical columns to dummy variables (features). Here we are getting 113 columns out of 21 columns 
+
+For feature engineering, after dropping the mushroom_id column we are encoding all categorical columns using the label encoder which results in all variables getting unique values based on the number of categories. For example if cap surface has 6 unique types (convex, bell, sunken, flat, knobbed, conical), each of these types will be converted into a numerical format and given a value between 0 and 5, a value for each type. This is because our machine learning model does not understand letters but only understands numbers so by converting our letters into numerical values we can read our data into the machine learning model. We end up with 21 columns, 1 which presents our outcome variable, Poisonous (0) and Edible (1), and remaining 20 columns for our features. 
 
 
 ### Preliminary Feature Selection, including their decision-making process 
 
 * All the columns except mushroom_id, class_edible and class_poisonous, are selected as features responsible for the target
 * The visualizations of each feature and its unique values helped in deciding for which feature to be selected
-* Depending on the encoded values of feature and the applied model, we will get the results
- 
+* After visualizing the feautres we found 
+        1. Column 'veil_type' shows no variations, hence dropped
+        2. In column 'stalk_root', out of 8124 rows, 2480 rows have missing                values and hence dropped
+* Depending on the label encoded values of feature and the applied model, we will get the results
+
 ## Machine Learning 
 We hope to correctly classify the dataset with the help of a number of different machine learning methods such as Logistic Regression, Support Vector Machines, Neural Networks etc. Where interpretability is possible we plan to measure feature importance to help understand which features are playing the most important role in helping determining whether a mushroom is safe or poisonous. Ideally we can afford to classify some safe mushrooms as poisonous but we have to make sure we do not classify poisonous mushrooms as safe, as poisonous mushrooms can be very dangerous for consumers. We aim to use the power of machine learning to to uncover interesting trends, patterns and optimize our classification of mushrooms.
-
 
 ### Description of how data was split into training and testing sets 
 * First the original dataset was split into input(X) and output(y) columns
@@ -86,15 +97,16 @@ We hope to correctly classify the dataset with the help of a number of different
 
 ### Explanation of model choice, including limitations and benefits
 * For Mushroom classification we have tried four models:
-  * Logistic Regression (Accuracy: 0.9995) 
-  * SVM(Support Vector Machine) (Accuracy: 1.0) 
-  * Deep Neural Network (Accuracy: 0.9862) 
+  * Logistic Regression (Accuracy: 0.93) 
+  * SVM(Support Vector Machine) (Accuracy: 0.94) 
+  * Deep Neural Network (Accuracy: 0.8387) 
   * Random Forest Classifier (Accuracy: 1.0) 
 
-Initially we selected and used Logistic Regression Model, but after evaluating other models, such as Deep Neural Network, Support Vector Machine and Random Forest Classifier, we decided to use Random Forest classifier. We realized that Neural Network might be overfitting the data by overanalyzing and creating unnecessary patterns, one of the reasons the model yields the least accurate score of the four models, Then we decided on the Logistic Regression model, and even though the model did a nearly perfect job of a 0.9995 accuracy, we realized that with a total of 21 features and 111 dummies, it may be better to use a more complex model that might yield an accuracy of 1. Therefore, we finally decided on the Random Forest Classifier that yields an accuracy of 1.
+Initially we selected and used Logistic Regression Model, but after evaluating other models, such as Deep Neural Network, Support Vector Machine and Random Forest Classifier, we decided to use Random Forest classifier. We realized that Neural Network might be overfitting the data by overanalyzing and creating unnecessary patterns, one of the reasons the model yields the least accurate score of the four models with an accuracy of only 83.87%, Then we decided on the Logistic Regression model, and even though the model did a nearly perfect job of a 93% accuracy, we realized that with a total of 20 features and lots of variation in the data due to 20 categorical features, it may be better to use a more complex model that might yield an accuracy of 100%. We used Support Vector Machine and the model improved another percentage point to 94%. Lastly, we tried the Random Forest model, which yielded an accuracy of 100%. Therefore, we decided to give with the Random Forest Model. 
 
 * Benefits 
-  * Out of all the models Support Vector Machine and Random Forest yield a perfect accuracy score of 1 with all outcomes classified correctly. We prefer Random Forest over Support Vector Machine because considering the large amount of categorical features we have, Random Forest adds randomness to the model, while growing the trees. Random Forest searches for the best feature within a subset of features, which also reduces overfitting. After deleting unnecessary features, we still end up with 21 features, and since all these features are categorical variable they end becoming a total of 113 dummy variables. Therefore Random Forest has a lot of depth and thus, can help us account for all the 113 dummies we have in our model. 
+  * First and foremost, Random Forest ended up being the only model that yielded an accuracy of 100% with all observations properly classified. Therefore, after trying all other models, we decided to go with Random Forest because it provided us the best results.  
+  * Random Forest adds randomness to the model, while growing the trees. Random Forest searches for the best feature within a subset of features, which also reduces overfitting. After deleting unnecessary features, we still end up with 20 features, all of which are categorical and have a number of unique values. Therefore Random Forest has a lot of depth and thus, can help us account for the variation in our model. 
 * Limitation
   * Random Forest has a kind of a black box approach, therefore, we have very little control on what the model does and therefore the model is less customizeable, we can at best only change the parameters or random seeds. Therefore, it is a predictive modeling tool, not a descriptive tool. 
   * Another problem with Random Forest is that a large number of trees can make the algorithm too slow and ineffective for real time predictions. Therefore, if we end up with too many trees our model may slow down and may not perform well. 
