@@ -27,12 +27,28 @@ We will be using several different technologies for the completion of our analys
   * ### For Presentation
     * We will be using Google Slides, click [here.](https://docs.google.com/presentation/d/1EP28CKPbYbpHLa78xovteIuUX3ddW1zJACCxqsLnej8/edit#slide=id.p)
 
+## Data Storage
+For our project, we are dealing with structured data with columns and rows. Therefore we would use a SQL databases such as MySQL Workbench, Postgres, Microsoft SQL etc. For our Data Storage we completed the following steps: 
+* Uploaded our raw CSV file into a Postgres Relational Database
+* Created a PostgreSQL database connection using Python in Jupyter Notebook to upload and analyze the data
+* Performed any data cleaning/preprocessing on raw file, then exported the cleaned dataset to our database
+* Resulted in a total of two tables in our database:
+       1. Raw data
+       2. Cleaned data
+
+
 ## Data Exploration 
-Before employing the model, we would like to do some data exploration to ask questions such as whether there is imbalance in the target variable in the model or if there is any correlation between the features and our outcome variable. We can visualize data with bar charts and heatmaps to understand relationships between different variables in the dataset. 
+Before employing the model, we would like to do some data exploration to ask questions such as whether there is imbalance in the target variable in the model or if there is any correlation between the features and our outcome variable. We can visualize data with bar charts and heatmaps to understand relationships between different variables in the dataset and we use these visualization to help aid our process. 
 
-### Preliminary Data Preprocessing
+### Graphical Univariate Analysis 
+In order to understand the categorical distribution of both our features and our outcome we create bar charts for all our features. Since all our features are categorical, we cannot use scatterplots, boxplots and other visualizations used for continuous data. Therefore, our visualizations are limited to bar charts and heatmaps. We plot these charts in order to gain some initial insights regarding the data. 
 
-Data preprocessing is a data mining technique that involves transforming raw data into an understandable format (Wikipedia definition)
+#### Bar Chart: Outcome Variable
+
+![This is a alt text.](/Images/Class_Distribution.png.png)
+
+### Data Preprocessing 
+Data preprocessing is a data mining technique that involves transforming raw data into an understandable format. 
 The following steps were carried out under Data Preprocessing:
 * Examining the data for null values, missing values, checking datatypes and setting it as required
 * New column 'mushroom_id' is created to give unique identification to each row
@@ -40,12 +56,13 @@ The following steps were carried out under Data Preprocessing:
 * Checking for the unique values of each feature and plotting them which helps in visualizing the features
 * Column 'veil_type' shows no variations, hence dropped
 * In column 'stalk_root', out of 8124 rows, 2480 rows have missing values and hence dropped
+
+## Feature Engineering 
+Feature engineering is the process of transforming raw data into features that better represent the underlying problem to the predictive models, resulting in improved model accuracy on unseen data. 
+The following steps were carried out under Feature Engineering: 
 * The data was denoted by just a character, so it was changed to meaningful understandable words
-
-### Preliminary Feature Engineering 
-Feature engineering is the process of transforming raw data into features that better represent the underlying problem to the predictive models, resulting in improved model accuracy on unseen data (as on https://medium.com/mindorks/what-is-feature-engineering-for-machine-learning-d8ba3158d97a)
-
 * After dropping the mushroom_id column we are encoding all categorical columns to dummy variables (features). Here we are getting 113 columns out of 21 columns 
+
 
 ### Preliminary Feature Selection, including their decision-making process 
 
