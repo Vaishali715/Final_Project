@@ -54,14 +54,14 @@ After plotting our outcome variable, we see that value counts of both edible and
 For all feature bar charts please refer to: 
 https://github.com/Vaishali715/Final_Project/tree/main/Images
 
-![This is a alt text.](main/Images/Dropped_variable.png)
-![This is a alt text.](main/Images/stalk_root.png)
+![This is a alt text.](/Images/Dropped_variable.png)
+![This is a alt text.](/Images/stalk_root.png)
 
 After analyzing the bar charts for all 22 features, we find anamolies in two of these features. In the veil type feature, we find that veil type count plot has only one category. If all mushroom samples, both poisonous and edible, have only one category of veil type, this feature will have no effect on. In the stalk root feature, we can see around 2500 counts of missing values, which may create an adverse effect on the outcome of model, therefore we dropped this category as well from our dataset. 
 
 ### Heatmap 
 
-
+We used label encoder to encode our unique values of each categorical feature into numeric values. After this conversion we created a heatmap to understand the correlation between different features. 
 
 ### Data Preprocessing 
 Data preprocessing is a data mining technique that involves transforming raw data into an understandable format. 
