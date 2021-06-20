@@ -85,7 +85,7 @@ For feature engineering, after dropping the mushroom_id column we are encoding a
 * The visualizations of each feature and its unique values helped in deciding for which feature to be selected
 * After visualizing the feautres we found: 
  1. Column 'veil_type' shows no variations, hence dropped
- 2. In column 'stalk_root', out of 8124 rows, 2480 rows have missing values and hence            dropped
+ 2. In column 'stalk_root', out of 8124 rows, 2480 rows have missing values and hence dropped
 * Depending on the label encoded values of feature and the applied model, we will get the results
 
 ## Machine Learning 
@@ -110,11 +110,11 @@ an edible mushroom incorrectly predicted as poisonous. Accuracy score is simply 
 Initially we selected and used Logistic Regression Model, but after evaluating other models, such as Deep Neural Network, Support Vector Machine and Random Forest Classifier, we decided to use Random Forest classifier. We realized that Neural Network might be overfitting the data by overanalyzing and creating unnecessary patterns, one of the reasons the model yields the least accurate score of the four models with an accuracy of only 85.4%, Then we decided on the Logistic Regression model, and even though the model did a nearly perfect job of a 93% accuracy, we realized that with a total of 20 features and lots of variation in the data due to 20 categorical features, it may be better to use a more complex model that might yield an accuracy of 100%. We used Support Vector Machine and the model improved another percentage point to 94%. Lastly, we tried the Random Forest model, which yielded an accuracy of 100%. Therefore, we decided to give with the Random Forest Model. 
 
 * Benefits 
-  * First and foremost, Random Forest ended up being the only model that yielded an accuracy of 100% with all observations properly classified. Therefore, after trying all other models, we decided to go with Random Forest because it provided us the best results.  
-  * Random Forest adds randomness to the model, while growing the trees. Random Forest searches for the best feature within a subset of features, which also reduces overfitting. After deleting unnecessary features, we still end up with 20 features, all of which are categorical and have a number of unique values. Therefore Random Forest has a lot of depth and thus, can help us account for the variation in our model. 
+  * First and foremost, Random Forest ended up being the only model that yielded an accuracy of 100% with all observations properly classified. Therefore, after trying all other models, we decided to go with Random Forest because it provided us the best results
+  * Random Forest adds randomness to the model, while growing the trees. Random Forest searches for the best feature within a subset of features, which also reduces overfitting. After deleting unnecessary features, we still end up with 20 features, all of which are categorical and have a number of unique values. Therefore Random Forest has a lot of depth and thus, can help us account for the variation in our model
 * Limitation
-  * Random Forest has a kind of a black box approach, therefore, we have very little control on what the model does and therefore the model is less customizeable, we can at best only change the parameters or random seeds. Therefore, it is a predictive modeling tool, not a descriptive tool. 
-  * Another problem with Random Forest is that a large number of trees can make the algorithm too slow and ineffective for real time predictions. Therefore, if we end up with too many trees our model may slow down and may not perform well. 
+  * Random Forest has a kind of a black box approach, therefore, we have very little control on what the model does and therefore the model is less customizeable, we can at best only change the parameters or random seeds. Therefore, it is a predictive modeling tool, not a descriptive tool
+  * Another problem with Random Forest is that a large number of trees can make the algorithm too slow and ineffective for real time predictions. Therefore, if we end up with too many trees our model may slow down and may not perform well
 
 ### Description and explanation of model’s confusion matrix, including final accuracy score
 In order to better understand how we determine Random Forest classifier to be our model of choice, let's look at the confusion matrix for all four models. There are a total of 4062 observations in our data our of which 2104 are 'edible' and 1958 are poisonous. 
