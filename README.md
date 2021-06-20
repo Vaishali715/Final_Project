@@ -51,15 +51,6 @@ After plotting our outcome variable, we see that value counts of both edible and
 
 #### Bar Chart: Features 
 
-![This is a alt text.](/Images/Bining_less_than_7categories.png)
-![This is a alt text.](/Images/Bining_less_than_7categories_1.png)
-![This is a alt text.](/Images/Bining_less_than_7categories_2.png)
-![This is a alt text.](/Images/Bining_less_than_7categories_3.png)
-![This is a alt text.](/Images/Bining_less_than_7categories_4.png)
-![This is a alt text.](/Images/Binning_greater_than_7.png)
-![This is a alt text.](/Images/Binning_greater_than_7_1.png)
-![This is a alt text.](/Images/Binning_greater_than_7_2.png)
-
 
 ### Data Preprocessing 
 Data preprocessing is a data mining technique that involves transforming raw data into an understandable format. 
