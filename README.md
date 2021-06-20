@@ -63,6 +63,11 @@ After analyzing the bar charts for all 22 features, we find anamolies in two of 
 
 We used label encoder to encode our unique values of each categorical feature into numeric values. After this conversion we created a heatmap to understand the correlation between different features. 
 
+![This is a alt text.](/Images/heatmap_g.png)
+
+In order to visualize, and understand, the correlations between our variables, we used a heatmap. Heatmap helps us understand which features are most correlated amongst each other as well as our outcome variable.
+It also allows us to understand relationships between all of the variables in our data. The stronger any given variable is correlated to class, the more likely the variable is to be important to the outcome of the model. Out of 21 features, 8 features are the most correlated to the target feature. In our heatmap, our most correlated features to our outcome (class) include Population, Spore Print Color, Ring Type, Stalk Color Above Ring, Gill Color, Gill Size, Gill Spacing and Bruises, all of which have a correlation of greater than 0.3.  
+
 ### Data Preprocessing 
 Data preprocessing is a data mining technique that involves transforming raw data into an understandable format. 
 The following steps were carried out under Data Preprocessing:
@@ -82,9 +87,9 @@ For feature engineering, after dropping the mushroom_id column we are encoding a
 
 * All the columns except mushroom_id, class_edible and class_poisonous, are selected as features responsible for the target
 * The visualizations of each feature and its unique values helped in deciding for which feature to be selected
-* After visualizing the feautres we found 
-        1. Column 'veil_type' shows no variations, hence dropped
-        2. In column 'stalk_root', out of 8124 rows, 2480 rows have missing                values and hence dropped
+* After visualizing the feautres we found: 
+ 1. Column 'veil_type' shows no variations, hence dropped
+ 2. In column 'stalk_root', out of 8124 rows, 2480 rows have missing values and hence            dropped
 * Depending on the label encoded values of feature and the applied model, we will get the results
 
 ## Machine Learning 
@@ -95,14 +100,18 @@ We hope to correctly classify the dataset with the help of a number of different
 * Next, the train_test_split function was called, passing both I/O arrays and have them split appropriately into train and test subsets
 * Here we have used stratified train-test split which ensures same proportions of examples in each class. This is achieved by setting the 'stratify' argument to the y component of the original dataset
 
+### Metrics Breakdown
+In evaluating our model we are interested in three main metrics: Precision, Recall and Accuracy Score. Precision is calculated as the True Positives as a fraction of our the sum of our True Positive and False Positive. In more simpler terms True Positive (TP) is an edible mushroom correctly predicted edible and False Positive (FP) is a poisonous mushroom incorrectly predicted edible. Recall is calculated as True Positive as a fraction of the sum of True Positive and False Negative. False Negative (FN) in our context is 
+an edible mushroom incorrectly predicted as poisonous. Accuracy score is simply the percentage of observations we have classified correctly, which is a good metric of the overall performance of our model. Whether we are more interested in Precision and Recall is really dependent on what we are interested in our model. Our model has two main outcomes: Poisonous (0) or Edible (1). In our case, Precision is more important to us than Recall because we can allow certain edible mushrooms to be predicted as poisonous (False Negative), it may cause wastage but we can allow for some flexibility. However, we can not allow for poisonous mushrooms to be misclassified as edible (False Positive) because if anyone eats a such a mushroom it can cause increased health risks along with some legal ramifications. Therefore, even though ideally we want to have both a high precision and outcome, in this case if we had to choose we would prefer a higher precision score than outcome. 
+
 ### Explanation of model choice, including limitations and benefits
 * For Mushroom classification we have tried four models:
-  * Logistic Regression (Accuracy: 0.93) 
-  * SVM(Support Vector Machine) (Accuracy: 0.94) 
-  * Deep Neural Network (Accuracy: 0.8387) 
-  * Random Forest Classifier (Accuracy: 1.0) 
+  * Logistic Regression (Accuracy: 93%) 
+  * SVM(Support Vector Machine) (Accuracy: 94%) 
+  * Deep Neural Network (Accuracy: 85.4%) 
+  * Random Forest Classifier (Accuracy: 100%) 
 
-Initially we selected and used Logistic Regression Model, but after evaluating other models, such as Deep Neural Network, Support Vector Machine and Random Forest Classifier, we decided to use Random Forest classifier. We realized that Neural Network might be overfitting the data by overanalyzing and creating unnecessary patterns, one of the reasons the model yields the least accurate score of the four models with an accuracy of only 83.87%, Then we decided on the Logistic Regression model, and even though the model did a nearly perfect job of a 93% accuracy, we realized that with a total of 20 features and lots of variation in the data due to 20 categorical features, it may be better to use a more complex model that might yield an accuracy of 100%. We used Support Vector Machine and the model improved another percentage point to 94%. Lastly, we tried the Random Forest model, which yielded an accuracy of 100%. Therefore, we decided to give with the Random Forest Model. 
+Initially we selected and used Logistic Regression Model, but after evaluating other models, such as Deep Neural Network, Support Vector Machine and Random Forest Classifier, we decided to use Random Forest classifier. We realized that Neural Network might be overfitting the data by overanalyzing and creating unnecessary patterns, one of the reasons the model yields the least accurate score of the four models with an accuracy of only 85.4%, Then we decided on the Logistic Regression model, and even though the model did a nearly perfect job of a 93% accuracy, we realized that with a total of 20 features and lots of variation in the data due to 20 categorical features, it may be better to use a more complex model that might yield an accuracy of 100%. We used Support Vector Machine and the model improved another percentage point to 94%. Lastly, we tried the Random Forest model, which yielded an accuracy of 100%. Therefore, we decided to give with the Random Forest Model. 
 
 * Benefits 
   * First and foremost, Random Forest ended up being the only model that yielded an accuracy of 100% with all observations properly classified. Therefore, after trying all other models, we decided to go with Random Forest because it provided us the best results.  
@@ -112,7 +121,24 @@ Initially we selected and used Logistic Regression Model, but after evaluating o
   * Another problem with Random Forest is that a large number of trees can make the algorithm too slow and ineffective for real time predictions. Therefore, if we end up with too many trees our model may slow down and may not perform well. 
 
 ### Description and explanation of model’s confusion matrix, including final accuracy score
-* The Random Forest Classifier's Confusion Matrix explains that there were total of 4062 predictions and out of that 1958 were actually 'edible' and also predicted 'edible' while 2104 were 'poisonous' and also predicted as 'poisonous'. Thus, we got a final accuracy score of 1.
+In order to better understand how we determine Random Forest classifier to be our model of choice, let's look at the confusion matrix for all four models. There are a total of 4062 observations in our data our of which 2104 are 'edible' and 1958 are poisonous. 
+
+![This is a alt text.](/Images/cm_neuralnetwork.png)
+![This is a alt text.](/Images/cm_logistic.png)
+![This is a alt text.](/Images/cm_svm.png)
+![This is a alt text.](/Images/cm_rf.png)
+
+In our confusion matrix, on the y axis we have our true labels and on the x axis we have our predicted labels. Top left are all Edible mushrooms correctly predicted as Edible, top right is all Edible mushrooms misclassified as Poisonous (False Negative), botton left is all Poisonous mushroom being misclassified as Edible (False Positive). This False Positive is our danger zone because it relates to our precision, as we cannot misclassify any poisonous mushroom as edible due to the health and legal complications it may cause. Therefore, it is our preference for this bottom left portion to be zero. Finally our botton right is all poisonous mushroom being classified as poisonous. 
+
+Now looking at all four classifier we find that our neurel network model performs the worst with 481 Poisonous mushrooms being misclassified as Edible, failing to meet our criteria on our most important metric while it also misclassifies 111 Edible mushrooms as Poisonous. Our Logistic and Support Vector Machine classifiers have a roughly similar performance, misclassifying 160 and 135 Poisonous mushrooms as Edible, and 110 and 99 Edible mushrooms as Poisonous. Therefore, our best perfoming models ends up being the Random Forest which classifies all our observations correctly with all 2104 Edible mushrooms classified as Edible and 1958 Poisonous mushroom classified as Poisonous. It meets our ideal criteria of having 0 Poisonous mushrooms misclassified as Edible with a 100% Precision, while also having perfect Recall rate which is a bonus for us. Therefore, we determined that Random Forest is the best classifier in this scenario. 
+
+### Feature Importances 
+
+After the confusion matrix. we look at the feature importances of our Random Forest model to see which features played the most importance role in determining our perfect accuracy. 
+
+![This is a alt text.](/Images/feature_importance.png)
+
+Looking at the featue importances, we find that Spore Print Color, Odor, Gill Size, Ring Type, Population and Bruises end up being some of the top feature importances in our graph. However, what's striking is that Spore Print Color, Ring Type, Gill Size, Population and Bruises were also among the most correlated variables to our outcome when we made our heatmap. This shows us that calculating correlation earlier on can give us a good indication of what variables will play an important role in our model. Therefore, it's very importance to conduct initial data exploration to better understand relationships between variables to give us a better idea behind feature selection and feature importances, especially when dealing with very large number of features. 
 
 ## Data Visualization Process
 We will use data visualization to show the relationship between all the 23 variables we have in our dataset, with the primary goal of showing the relationship between our features and our outcome (class). Since we have largely unordered categorical variables, our analysis is limited to heatmaps, bar plots and mosaic plots. 
