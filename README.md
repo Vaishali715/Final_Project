@@ -140,15 +140,34 @@ After the confusion matrix. we look at the feature importances of our Random For
 
 Looking at the featue importances, we find that Spore Print Color, Odor, Gill Size, Ring Type, Population and Bruises end up being some of the top feature importances in our graph. However, what's striking is that Spore Print Color, Ring Type, Gill Size, Population and Bruises were also among the most correlated variables to our outcome when we made our heatmap. This shows us that calculating correlation earlier on can give us a good indication of what variables will play an important role in our model. Therefore, it's very importance to conduct initial data exploration to better understand relationships between variables to give us a better idea behind feature selection and feature importances, especially when dealing with very large number of features. 
 
-## Data Visualization Process
-We will use data visualization to show the relationship between all the 23 variables we have in our dataset, with the primary goal of showing the relationship between our features and our outcome (class). Since we have largely unordered categorical variables, our analysis is limited to heatmaps, bar plots and mosaic plots. 
+### Recommendations for Future Analysis
+For future analysis we provide the following recommendations: 
+* Our dataset was comprised of hypothetical samples so it would be informative to implement the model on real mushroom samples from the same species and mushroom families. This would give us insight on a real-life application of our model.There are over 14,000 known species of mushrooms, and our dataset contained hypothetical samples from only 23 species and two families
+* We would be interested to see how well our model performs when testing a new, unseen data, perhaps with completely different mushroom samples from different species
+* There are many poisonous plants that may appear harmless, but could be deadly or cause injury or illness to humans or animals. Further tweaking of and implementation of our model could possibly assist in predicting poisonousness of other plants
 
-* We first create a bar chart for the class (outcome) variable to understand the categorical distribution and ensure there is no imbalance between the two classes. We find that our outcome categories are roughly equal in count, we do not need to use resampling methods. 
+### What Would We Do Differently? 
+Due to time constraints, we completed this project in just four weeks. If had more time we provide, we would explore this project further by: 
+* Exploring individual features and their correlation in more detail, as well as their importance to the outcome of the model
+* Although our accuracy score with Random Forest Classifier was perfect, it would be interesting to play around with dropping even more features, focusing on those deemed most meaningful. We could then re-run various supervised machine learning models to compare and contrast their outcomes. This could lead to the possibility of another model performing better than our Random Forest Classifier.
+* Since our dataset is categorical, we could perform further statistical analysis by looking at frequency data; for example, the number of occurrences of each unique value per physical characteristic. We could also implement the chi-squared test to comparing the different between categorical levels of different features and comparing it our outcome for example by seeing whether different Population of mushrooms (scattered, numerous, abundant, solitary, clustered, several) are have a relationship with whether a mushroom's class is Edible or Poisonous. 
+
+
+## Data Visualization 
+
+### Data Visualization: Dashboard
+For our Data Visualization, we created some initial plots in Jupyter Notebook using matplotlib and seaborn to do some initial data exploration. Afterwards, we decided to use Tableau to display some interactive features, creating a Tableau Dashboard which displays our confusion matrix, feature importances, heatmap and an interactive element for a bar chart displaying our most important feature, spore print color. You can access our dashboard in the link here: 
+https://public.tableau.com/app/profile/pj.smith/viz/MushroomAnalysis/MushroomDashboard
+
+### Data Visualization: Summary 
+We used data visualization to show the relationship between all the 22 variables we have in our dataset, with the primary goal of showing the relationship between our features and our outcome (class). Since we have largely unordered categorical variables, our analysis is limited to heatmaps, and barplots. We will also use data visualization to plot our confusion matrix and feature importances. 
+
+* We first created a bar chart for the class (outcome) variable to understand the categorical distribution and ensure there is no imbalance between the two classes. We find that our outcome categories are roughly equal in count, we do not need to use resampling methods. 
 * We find that the veil type feature has one category, since all mushrooms have the same category of veil type, this feature does not contribute to the model and should be dropped
-* We create a heatmap to visualize the relationships between all the variables in the model to ensure there is no multicollinearity between the features as well as to understand which features are most correlated to our outcome. We find that population, spore-print-color, ring type, stalk color above ring, gill color, gill size, gill spacing and bruises all have a correlation of greater than 0.3 with class.
-* We create barplots for the remaining 21 features and find many empty bins, which show that many categories are unnecessary because they do not have any observations. Some variables are even made up of largely one category with other categories have few or no observations. These visuals allow us to drop unnecessary categories (bins) as well as unnecessary features that are adding noise to our model
-* We will change our bins and drop some features and create some updated bar plots to show the results of the changes we have made
-* We will visualize our confusion matrix and create a horizontal bar plot for feature importances, showing how our model performed and which were our most important features, ultimately proving how the data visualization process helped our feature selection and improved our model.
+* We create a heatmap to visualize the relationships between all the variables in the model to understand which features are most correlated to our outcome. We find that population, spore print color, ring type, stalk color above ring, gill color, gill size, gill spacing and bruises all have a correlation of greater than 0.3 with class.
+* We create barplots for the remaining 21 features to understand categorical distribution of all variables in our model. 
+* We create an interactive element in Tableau where we can toggle on the bar chart for our most important feature, spore print color, to see the distribution of categories of spore print color within Edible mushrooms, Poisonous mushrooms or even both.
+* We visualized our confusion matrix to show model performance and created a horizontal bar plot for feature importances of our model of choice: Random Forest. These visuals showed how our model performed and which were our most important features, ultimately proving how the data visualization process helped our feature selection and improved our model.
 
 ## References 
 
