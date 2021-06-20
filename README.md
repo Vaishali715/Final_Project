@@ -45,7 +45,7 @@ In order to understand the categorical distribution of both our features and our
 
 #### Bar Chart: Outcome Variable
 
-![This is a alt text.](/Images/Class_Distribution.png.png)
+![This is a alt text.](/Images/Class_Distribution.png)
 
 ### Data Preprocessing 
 Data preprocessing is a data mining technique that involves transforming raw data into an understandable format. 
