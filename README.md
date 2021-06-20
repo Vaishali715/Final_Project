@@ -44,13 +44,11 @@ Before employing the model, we would like to do some data exploration to ask que
 In order to understand the categorical distribution of both our features and our outcome we create bar charts for all our features. Since all our features are categorical, we cannot use scatterplots, boxplots and other visualizations used for continuous data. Therefore, our visualizations are limited to bar charts and heatmaps. We plot these charts in order to gain some initial insights regarding the data. 
 
 #### Bar Chart: Outcome Variable
-
 ![This is a alt text.](/Images/Class_Distribution.png)
 
 After plotting our outcome variable, we see that value counts of both edible and poisonous mushrooms are roughly similar. This plot is important as it shows a healthy distribution and no imbalance in the categorical distribution, and that’s why there is no need of any resampling methods (Oversampling, Undersampling, Combination Sampling)
 
 #### Bar Chart: Features 
-
 For all feature bar charts please refer to: 
 https://github.com/Vaishali715/Final_Project/tree/main/Images
 
@@ -60,7 +58,6 @@ https://github.com/Vaishali715/Final_Project/tree/main/Images
 After analyzing the bar charts for all 22 features, we find anamolies in two of these features. In the veil type feature, we find that veil type count plot has only one category. If all mushroom samples, both poisonous and edible, have only one category of veil type, this feature will have no effect on. In the stalk root feature, we can see around 2500 counts of missing values, which may create an adverse effect on the outcome of model, therefore we dropped this category as well from our dataset. 
 
 ### Heatmap 
-
 We used label encoder to encode our unique values of each categorical feature into numeric values. After this conversion we created a heatmap to understand the correlation between different features. 
 
 ![This is a alt text.](/Images/heatmap_g.png)
@@ -84,7 +81,6 @@ For feature engineering, after dropping the mushroom_id column we are encoding a
 
 
 ### Preliminary Feature Selection, including their decision-making process 
-
 * All the columns except mushroom_id, class_edible and class_poisonous, are selected as features responsible for the target
 * The visualizations of each feature and its unique values helped in deciding for which feature to be selected
 * After visualizing the feautres we found: 
@@ -133,7 +129,6 @@ In our confusion matrix, on the y axis we have our true labels and on the x axis
 Now looking at all four classifier we find that our neurel network model performs the worst with 481 Poisonous mushrooms being misclassified as Edible, failing to meet our criteria on our most important metric while it also misclassifies 111 Edible mushrooms as Poisonous. Our Logistic and Support Vector Machine classifiers have a roughly similar performance, misclassifying 160 and 135 Poisonous mushrooms as Edible, and 110 and 99 Edible mushrooms as Poisonous. Therefore, our best perfoming models ends up being the Random Forest which classifies all our observations correctly with all 2104 Edible mushrooms classified as Edible and 1958 Poisonous mushroom classified as Poisonous. It meets our ideal criteria of having 0 Poisonous mushrooms misclassified as Edible with a 100% Precision, while also having perfect Recall rate which is a bonus for us. Therefore, we determined that Random Forest is the best classifier in this scenario. 
 
 ### Feature Importances 
-
 After the confusion matrix. we look at the feature importances of our Random Forest model to see which features played the most importance role in determining our perfect accuracy. 
 
 ![This is a alt text.](/Images/feature_importance.png)
